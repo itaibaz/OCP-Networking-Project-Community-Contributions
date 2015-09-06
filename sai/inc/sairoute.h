@@ -67,6 +67,12 @@ typedef enum _sai_route_attr_t
      * Value Range SAI_SWITCH_ATTR_ROUTE_USER_META_DATA_RANGE */
     SAI_ROUTE_ATTR_META_DATA,
 
+    /** The router interface to which the subnet is attached [sai_object_id_t] (CREATE_AND_SET)
+    * Valid only when SAI_ROUTE_ATTR_DIRECTLY_REACHABLE_ROUTE == true
+    *   (MANDATORY_ON_CREATE when SAI_ROUTE_ATTR_DIRECTLY_REACHABLE_ROUTE == true)
+    *   (default to SAI_NULL_OBJECT_ID) */
+    SAI_ROUTE_ATTR_DIRECTLY_REACHABLE_EGRESS_RIF,
+
     /** Custom range base value */
     SAI_ROUTE_ATTR_CUSTOM_RANGE_BASE  = 0x10000000
 
