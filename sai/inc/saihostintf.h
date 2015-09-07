@@ -343,11 +343,8 @@ typedef sai_status_t(*sai_get_hostif_trap_attribute_fn)(
  */
 typedef enum _sai_hostif_user_defined_trap_id_t
 {
-    /** Samplepacket traps  */
-    SAI_HOSTIF_USER_DEFINED_TRAP_ID_SAMPLEPACKET = 0x00000001,
-
     /** ACL traps */
-    SAI_HOSTIF_USER_DEFINED_TRAP_ID_ACL_MIN = 0x00000002,
+    SAI_HOSTIF_USER_DEFINED_TRAP_ID_ACL_MIN = 0x00000001,
 
     SAI_HOSTIF_USER_DEFINED_TRAP_ID_ACL_MAX = SAI_HOSTIF_USER_DEFINED_TRAP_ID_ACL_MIN + SAI_HOSTIF_USER_DEFINED_TRAP_ID_TABLE_RANGE,
 
