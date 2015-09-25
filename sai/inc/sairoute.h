@@ -52,24 +52,18 @@ typedef enum _sai_route_attr_t
        (default to 0) */
     SAI_ROUTE_ATTR_TRAP_PRIORITY,
 
-    /** Next hop or next hop group id for the packet [sai_object_id_t]
+    /** Next hop or next hop group id for the packet or a router interface 
+     * in case of directly reachable route [sai_object_id_t]
      * The next hop id can be a generic next hop object, such as next hop,
-     * next hop group. */
+     * next hop group.
+     * Directly reachable routes are the IP subnets that are directly attached to the router.
+     * For such routes, fill the router interface to which the subnet is attached */
     SAI_ROUTE_ATTR_NEXT_HOP_ID,
 
     /** User based Meta Data
      * [sai_uint32_t] (CREATE_AND_SET)
      * Value Range SAI_SWITCH_ATTR_ROUTE_USER_META_DATA_RANGE */
     SAI_ROUTE_ATTR_META_DATA,
-
-    /** The router interface to which the subnet is attached [sai_object_id_t] (CREATE_AND_SET)
-    * Value is filled only for directly reachable routes.
-    * If value is SAI_NULL_OBJECT_ID, then the route isn't directly reachable.
-    * Directly reachable routes are the IP subnets that are directly attached to the router.
-    * This attribute and next hop ID are mutually exclusive.
-    *   (MANDATORY_ON_CREATE for directly reachable routes)
-    *   (default to SAI_NULL_OBJECT_ID) */
-    SAI_ROUTE_ATTR_DIRECTLY_REACHABLE_EGRESS_RIF,
 
     /** Custom range base value */
     SAI_ROUTE_ATTR_CUSTOM_RANGE_BASE  = 0x10000000
